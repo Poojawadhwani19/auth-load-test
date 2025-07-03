@@ -1,0 +1,21 @@
+{
+  "name": "auth-load-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "esbuild src/main.test.ts --bundle --outfile=dist/test.js --platform=neutral --format=esm --external:k6 --external:k6/http",
+    "test": "npx dotenv -e .env -- k6 run dist/test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "description": "",
+  "devDependencies": {
+    "@types/k6": "^1.0.2",
+    "dotenv": "^16.5.0",
+    "dotenv-cli": "^8.0.0",
+    "esbuild": "^0.25.5",
+    "typescript": "^5.8.3"
+  }
+}
