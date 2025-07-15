@@ -4,9 +4,10 @@ import http from "k6/http";
 export function loginUser(kcToken: string, authId: string) {
   console.log("Login using authId:", authId);
 
-  const url = `https://authregapi.qa.cdx.nz/api/v1/auth/login?auth0Id=${encodeURIComponent(
+  const url = `https://authregapi.uat.cdx.nz/api/v1/auth/login?auth0Id=${encodeURIComponent(
     authId
   )}`;
+
   const headers = {
     accept: "application/json",
     Authorization: `Bearer ${kcToken}`,
@@ -15,7 +16,10 @@ export function loginUser(kcToken: string, authId: string) {
   };
 
   const start = Date.now();
-  const res = http.get(url, { headers });
+  const res = http.get(url, {
+    headers,
+    tags: { name: "Login" }, // <-- This tag is important for grouped metrics
+  });
   const duration = Date.now() - start;
 
   console.log(`[GET] ${url} - Status: ${res.status} - Duration: ${duration}ms`);
