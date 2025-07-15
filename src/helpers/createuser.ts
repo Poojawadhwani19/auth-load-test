@@ -1,11 +1,11 @@
 import http from "k6/http";
 
-export function createRegistration(
+export function createRegistrationinDB(
   kcToken: string,
   auth0Id: string,
   email: string
 ): void {
-  const url = "https://authregapi.qa.cdx.nz/api/v1/auth/register";
+  const url = "https://authregapi.uat.cdx.nz/api/v1/auth/register";
 
   const payload = JSON.stringify({
     email: email,
