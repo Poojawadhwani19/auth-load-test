@@ -2,7 +2,7 @@ import http from "k6/http";
 
 export function generateKCToken(): string {
   const url =
-    "https://iam-qa.woolworths.co.nz/realms/wwnz-internalsystems/protocol/openid-connect/token";
+    "https://iam-uat.woolworths.co.nz/realms/wwnz-internalsystems/protocol/openid-connect/token";
   const payload =
     `grant_type=client_credentials` +
     `&client_id=${__ENV.client_id_KC}` +
