@@ -4,11 +4,11 @@ export function generateAuthToken(): string {
   const payload = JSON.stringify({
     client_id: __ENV.client_id,
     client_secret: __ENV.client_secret,
-    audience: "https://wow-nz-qa.woolworths-dev.auth0app.com/api/v2/",
+    audience: "https://wow-nz-uat.woolworths-dev.auth0app.com/api/v2/",
     grant_type: "client_credentials",
   });
 
-  const url = "https://wow-nz-qa.woolworths-dev.auth0app.com/oauth/token";
+  const url = "https://wow-nz-uat.woolworths-dev.auth0app.com/oauth/token";
   const headers = {
     "Content-Type": "application/json",
   };
