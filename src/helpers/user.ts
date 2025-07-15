@@ -29,7 +29,7 @@ export function createUser(authToken: string): CreatedUser {
   console.log("Create User Payload:", payload);
 
   const res = http.post(
-    "https://wow-nz-qa.woolworths-dev.auth0app.com/api/v2/users",
+    "https://wow-nz-uat.woolworths-dev.auth0app.com/api/v2/users",
     payload,
     {
       headers: {
